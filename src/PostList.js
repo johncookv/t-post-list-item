@@ -9,12 +9,14 @@ function PostList({ posts, deletePost }) {
   // TODO: Each post must have a delete button - <button name="delete">Delete</button> - that deletes the post when clicked
 
   const list = posts.map((entry, index) => (
-    <div>
-      <PostListItem key={index} posts={entry} className="post" />
-      <button onClick={() => deletePost(index)}>Delete</button>
+    <div className="post">
+      <PostListItem key={index} post={entry} />
+      <button name="delete" onClick={() => deletePost(index)}>
+        Delete
+      </button>
     </div>
   ));
-  return <ul>{list}</ul>;
+  return <div>{list}</div>;
 }
 
 export default PostList;
